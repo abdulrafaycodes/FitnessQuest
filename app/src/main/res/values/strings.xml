@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Fitness Quest</string>
+    <string name="empty_email_error">Email cannot be empty</string>
+    <string name="empty_password_error">Password cannot be empty</string>
+    <string name="invalid_email_error">Invalid email address</string>
+    <string name="invalid_password_error">Password must be at least 6 characters</string>
+    <string name="empty_fullname_error">Name should not be empty</string>
+    <string name="short_fullname_error">Enter atleast five characters</string>
+    <string name="invalid_fullname_error">Special characters &amp; numbers are not allowed</string>
+    <string name="login_failed_title">Login Failed</string>
+    <string name="signup_failed_title">Signup Failed</string>
+    <string name="signup_email_exists">Email already registered. Please try with a different email or login instead.</string>
+    <string name="auth_failed_message">Please try again with correct credentials.</string>
+    <string name="email_verification_title">Email Verification Pending</string>
+    <string name="email_verification_message">Check your email and verify your account. You will be able to login once you verify your email.</string>
+    <string name="ok">OK</string>
+
+</resources>
