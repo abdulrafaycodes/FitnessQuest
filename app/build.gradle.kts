@@ -49,4 +49,5 @@ dependencies {
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.19")
     implementation("androidx.compose.material:material-android:1.7.0-alpha08")
     implementation("com.hbb20:ccp:2.7.1")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }
