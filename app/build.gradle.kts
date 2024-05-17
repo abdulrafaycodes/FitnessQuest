@@ -46,6 +46,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.android.gms:play-services-auth:21.1.1")
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-firestore:24.0.0")
+
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.19")
     implementation("androidx.compose.material:material-android:1.7.0-alpha08")
     implementation("com.hbb20:ccp:2.7.1")
@@ -57,5 +59,9 @@ dependencies {
     // Add Glide dependency
     implementation("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+<<<<<<< Updated upstream
 
+=======
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+>>>>>>> Stashed changes
 }
