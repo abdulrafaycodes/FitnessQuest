@@ -98,4 +98,17 @@ public class Profile extends AppCompatActivity {
                 .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
                 .show();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (user == null) {
+            finish();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

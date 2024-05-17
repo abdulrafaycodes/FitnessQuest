@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/outfit_medium"
-        android:text="Name"
+        android:text="John Doe"
         android:textColor="@color/gradient_start"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -168,7 +168,7 @@
             android:background="@drawable/radio_button_unchecked_background"
             android:fontFamily="@font/outfit_medium"
             android:padding="15dp"
-            android:text="Gender"
+            android:text="Male"
             android:textColor="@color/gradient_start"
             android:textSize="16sp" />
 
@@ -184,7 +184,7 @@
             android:background="@drawable/radio_button_unchecked_background"
             android:fontFamily="@font/outfit_medium"
             android:padding="15dp"
-            android:text="Age"
+            android:text="27"
             android:textColor="@color/gradient_start"
             android:textSize="16sp" />
     </LinearLayout>
@@ -207,7 +207,7 @@
             android:background="@drawable/classic_btn_light"
             android:fontFamily="@font/outfit_medium"
             android:padding="15dp"
-            android:text="Email"
+            android:text="johndoe@gmail.com"
             android:textColor="@color/gradient_start"
             android:textSize="16sp" />
 
