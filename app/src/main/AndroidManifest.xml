@@ -22,8 +22,10 @@
             android:name=".AllExercisesByBody"
             android:exported="false" />
         <activity
-            android:name=".ExcerciseListScreen"
             android:name=".AddUserActiveStatus"
+            android:exported="false" />
+        <activity
+            android:name=".ExcerciseListScreen"
             android:exported="false" />
         <activity
             android:name=".AddUserGoal"
