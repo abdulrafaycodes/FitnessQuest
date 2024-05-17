@@ -23,6 +23,13 @@
             android:exported="false" />
         <activity
             android:name=".ExcerciseListScreen"
+            android:name=".AddUserActiveStatus"
+            android:exported="false" />
+        <activity
+            android:name=".AddUserGoal"
+            android:exported="false" />
+        <activity
+            android:name=".AddUserDetails"
             android:exported="false" />
         <activity
             android:name=".About"

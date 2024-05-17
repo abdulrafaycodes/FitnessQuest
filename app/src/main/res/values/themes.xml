@@ -50,4 +50,15 @@
     <style name="Widget.App.NavigationView" parent="Widget.Material3.NavigationView">
         <item name="itemShapeFillColor">@color/light_background</item>
     </style>
+
+    <style name="CustomRadioButtonStyle" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/radio_button_background_selector</item> <!-- Selector for custom background -->
+        <item name="android:padding">17dp</item> <!-- Padding inside each radio button -->
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:fontFamily">@font/outfit_regular</item>
+        <item name="android:textColor">?attr/colorOnSurface</item> <!-- Text color -->
+        <item name="android:drawablePadding">8dp</item> <!-- Space between text and drawable -->
+    </style>
+
+
 </resources>

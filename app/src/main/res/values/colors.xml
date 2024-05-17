@@ -12,4 +12,5 @@
     <color name="primary">#36ACE2</color>"
     <color name="transparent">#00000000</color>
     <color name="light_background">#DCEAFF</color>
+    <color name="light_grey">#F2F2F2</color>
 </resources>
