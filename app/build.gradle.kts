@@ -49,4 +49,13 @@ dependencies {
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.19")
     implementation("androidx.compose.material:material-android:1.7.0-alpha08")
     implementation("com.hbb20:ccp:2.7.1")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
+    // Add Glide dependency
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+
 }

@@ -2,11 +2,11 @@ package com.example.fitnessquest;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -25,6 +25,12 @@ public class Main extends AppCompatActivity {
     MaterialToolbar topAppBar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
+    CardView cardView;
+    CardView cardView_by_equip;
+    CardView cardView_by_target;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +55,11 @@ public class Main extends AppCompatActivity {
 
         // Mark the current activity's menu item as selected
         navigationView.setCheckedItem(R.id.home);
+        cardView= findViewById(R.id.categoryCard);
+        cardView_by_equip=findViewById(R.id.categoryCard2);
+        cardView_by_target=findViewById(R.id.categoryCard3);
+
+
 
         navigationView.setNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
@@ -69,6 +80,45 @@ public class Main extends AppCompatActivity {
             drawerLayout.closeDrawer(navigationView);
             return true;
         });
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main.this, ExcerciseListScreen.class);
+                intent.putExtra("TYPE","bodyPartList" );
+                intent.putExtra("HEADING","Exercise by Body Parts" );
+                intent.putExtra("SLUG","bodyPart" );
+
+                startActivity(intent);
+            }
+        });
+
+        cardView_by_equip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main.this, ExcerciseListScreen.class);
+                intent.putExtra("TYPE","equipmentList" );
+                intent.putExtra("HEADING","Exercise by Equipments" );
+                intent.putExtra("SLUG","equipment" );
+
+
+                startActivity(intent);
+            }
+        });
+
+        cardView_by_target.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main.this, ExcerciseListScreen.class);
+                intent.putExtra("TYPE","targetList" );
+                intent.putExtra("HEADING","Exercise by Target" );
+                intent.putExtra("SLUG","target" );
+
+
+                startActivity(intent);
+            }
+        });
+
 
     }
     void setVariables(){
