@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fitnessquest.adapters.ExerciseListRvAdapter;
 import com.example.fitnessquest.client.ApiClient;
 import com.example.fitnessquest.client.ApiInterface;
 import android.widget.TextView;

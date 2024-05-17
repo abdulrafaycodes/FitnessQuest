@@ -1,4 +1,4 @@
-package com.example.fitnessquest;
+package com.example.fitnessquest.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import com.bumptech.glide.Glide;
+import com.example.fitnessquest.ExerciseDetail;
+import com.example.fitnessquest.ExercisesBodyParts;
+import com.example.fitnessquest.R;
 
 public class BodyPartsExercisesAdapter extends RecyclerView.Adapter<BodyPartsExercisesAdapter.ViewHolder>{
 
