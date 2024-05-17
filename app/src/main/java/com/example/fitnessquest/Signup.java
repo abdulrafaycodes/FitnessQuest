@@ -37,7 +37,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.hbb20.CountryCodePicker;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Signup extends AppCompatActivity {
     TextView goToLogin, txtHeadingSignup;
@@ -47,6 +51,9 @@ public class Signup extends AppCompatActivity {
     TextInputLayout txtEmail, txtPassword, txtFullname;
     MaterialButton btnSignup;
     private FirebaseAuth mAuth;
+
+    private FirebaseFirestore db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +131,8 @@ public class Signup extends AppCompatActivity {
                                                 Log.w("EmailVerification", "sendEmailVerification", task1.getException());
                                             }
                                         });
+                                createUserDocument(user);
+
                             }
                         } else {
                             // If sign up fails, display a message to the user.
@@ -188,6 +197,31 @@ public class Signup extends AppCompatActivity {
             }
         });
     }
+
+    private void createUserDocument(FirebaseUser user) {
+        String uID = user.getUid();
+        Map<String, Object> userData = new HashMap<>();
+        userData.put("uID", uID);
+        userData.put("Gender", "");
+        userData.put("Age", 0);
+        userData.put("CaloriesBurnt", 0);
+        userData.put("Height", 0);
+        userData.put("Weight", 0);
+        userData.put("Goal", "");
+        userData.put("ActiveStatus", "");
+        userData.put("WorkoutsCompleted", 0);
+        userData.put("premiumStatus", false);
+
+        db.collection("users").document(uID)
+                .set(userData)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "User document created successfully.");
+                    } else {
+                        Log.w(TAG, "Error creating user document", task.getException());
+                    }
+                });
+    }
     void setVariables() {
         goToLogin = findViewById(R.id.txtGoToLogin);
         txtHeadingSignup = findViewById(R.id.txtHeadingSignup);
@@ -205,6 +239,8 @@ public class Signup extends AppCompatActivity {
         imgAnimationSignup = findViewById(R.id.imgAnimationSignup);
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
     }
 
     private void setUpTextWatchers() {

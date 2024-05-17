@@ -26,6 +26,20 @@
             android:exported="false" />
         <activity
             android:name=".ExcerciseListScreen"
+<<<<<<< Updated upstream
+=======
+            android:exported="false" />
+
+        <activity
+            android:name=".AddUserActiveStatus"
+            android:exported="false" />
+
+        <activity
+            android:name=".AddUserGoal"
+            android:exported="false" />
+        <activity
+            android:name=".AddUserDetails"
+>>>>>>> Stashed changes
             android:exported="false" />
         <activity
             android:name=".AddUserGoal"
@@ -60,11 +74,7 @@
             android:name=".Main"
             android:exported="true"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Signup"
@@ -80,7 +90,13 @@
             android:name=".Splash"
             android:exported="true"
             android:noHistory="true"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
