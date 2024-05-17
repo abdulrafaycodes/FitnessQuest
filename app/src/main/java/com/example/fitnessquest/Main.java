@@ -18,6 +18,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Main extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -29,7 +31,7 @@ public class Main extends AppCompatActivity {
     CardView cardView;
     CardView cardView_by_equip;
     CardView cardView_by_target;
-
+    CircleImageView profileIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +121,10 @@ public class Main extends AppCompatActivity {
             }
         });
 
-
+        profileIcon.setOnClickListener( v -> {
+                Intent intent = new Intent(Main.this, Profile.class);
+                startActivity(intent);
+        });
     }
     void setVariables(){
         // Initialize Firebase Auth
@@ -129,6 +134,7 @@ public class Main extends AppCompatActivity {
         topAppBar = findViewById(R.id.topAppBar);
         navigationView = findViewById(R.id.navigationView);
         setSupportActionBar(topAppBar);
+        profileIcon = findViewById(R.id.profileIcon);
     }
 
     @Override

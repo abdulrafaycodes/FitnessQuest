@@ -44,6 +44,11 @@ public class Profile extends AppCompatActivity {
             String emailAddress = user.getEmail();
             showResetPasswordDialog(this, emailAddress);
         });
+
+        logout.setOnClickListener(v -> {
+            mAuth.signOut();
+            finish();
+        });
     }
     void setVariables() {
         profileImage = findViewById(R.id.profileImage);

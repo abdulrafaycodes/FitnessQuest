@@ -1,4 +1,4 @@
-package com.example.fitnessquest;
+package com.example.fitnessquest.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.fitnessquest.AllExercisesByBody;
+import com.example.fitnessquest.R;
 
 import java.util.List;
 
