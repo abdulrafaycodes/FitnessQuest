@@ -53,26 +53,27 @@
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/bannerImg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="150dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/home_banner" />
+                    app:srcCompat="@drawable/workoutbanner" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/calCard"
                     android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginStart="16dp"
-                    app:cardBackgroundColor="@color/white"
+                    android:layout_height="150dp"
+                    android:backgroundTint="@color/light_background"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
                     app:cardMaxElevation="12dp"
                     app:cardPreventCornerOverlap="true"
                     app:cardUseCompatPadding="true"
@@ -82,40 +83,53 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:orientation="vertical">
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/caloryCount"
+                        <ImageView
+                            android:id="@+id/caloryIcon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/burn" />
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:fontFamily="@font/outfit_medium"
-                            android:text="0"
-                            android:textColor="@color/text_dark"
-                            android:textSize="20dp" />
+                            android:orientation="vertical"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="8dp">
 
-                        <TextView
-                            android:id="@+id/caloryString"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:fontFamily="@font/outfit_medium"
-                            android:text="@string/calories"
-                            android:textColor="@color/text_dark"
-                            android:textSize="25dp" />
+                            <TextView
+                                android:id="@+id/caloryCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/outfit_medium"
+                                android:text="0"
+                                android:textColor="@color/text_dark"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:id="@+id/caloryString"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/outfit_medium"
+                                android:text="@string/calories"
+                                android:textColor="@color/text_dark"
+                                android:textSize="20dp" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/bmi_card"
                     android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_margin="10dp"
-                    app:cardBackgroundColor="@color/white"
+                    android:layout_height="150dp"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
                     app:cardMaxElevation="12dp"
+                    android:backgroundTint="@color/light_grey"
                     app:cardPreventCornerOverlap="true"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintBottom_toBottomOf="@+id/calCard"
@@ -126,28 +140,40 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:orientation="vertical">
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/textView4"
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/workout" />
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:fontFamily="@font/outfit_medium"
-                            android:text="500"
-                            android:textColor="@color/text_dark"
-                            android:textSize="20dp" />
+                            android:orientation="vertical"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="8dp">
 
-                        <TextView
-                            android:id="@+id/textView5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:fontFamily="@font/outfit_medium"
-                            android:text="@string/bmi"
-                            android:textColor="@color/text_dark"
-                            android:textSize="25dp" />
+                            <TextView
+                                android:id="@+id/bmiCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/outfit_medium"
+                                android:text="0"
+                                android:textColor="@color/text_dark"
+                                android:textSize="20dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/outfit_medium"
+                                android:text="@string/bmi"
+                                android:textColor="@color/text_dark"
+                                android:textSize="20dp" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -155,7 +181,6 @@
                     android:id="@+id/category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/outfit_medium"
                     android:text="@string/category"
                     android:textColor="@color/text_dark"
@@ -168,42 +193,40 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/categoryCard"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="0dp"
-                    app:cardBackgroundColor="@color/white"
+                    android:layout_height="180dp"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardMaxElevation="12dp"
+                    android:layout_margin="15dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="7dp"
                     app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true"
                     app:layout_constraintBottom_toTopOf="@+id/categoryCard2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/category">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/card1"
+                        android:padding="15dp"
                         android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="262dp"
-                            android:layout_height="70dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="8dp"
-                            android:contentDescription="TODO"
-                            android:src="@drawable/anim_splash" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_vertical|center_horizontal"
-                            android:layout_marginTop="0dp"
-                            android:fontFamily="@font/outfit_medium"
+                            android:layout_marginRight="150dp"
+                            android:fontFamily="@font/outfit_semibold"
                             android:text="@string/exercise_by_body_parts"
-                            android:textColor="@color/text_dark"
+                            android:textColor="@color/gradient_start"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="150dp"
+                            android:fontFamily="@font/outfit_regular"
+                            android:text="Get started by focusing on muscles that need attention."
+                            android:textColor="@color/gradient_start"
                             android:textSize="15sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -211,14 +234,13 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/categoryCard2"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="0dp"
-                    app:cardBackgroundColor="@color/white"
+                    android:layout_height="180dp"
                     app:cardCornerRadius="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     app:cardElevation="10dp"
                     app:cardMaxElevation="12dp"
                     app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true"
                     app:layout_constraintBottom_toTopOf="@+id/categoryCard3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -228,24 +250,26 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/card2"
+                        android:padding="15dp"
                         android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="262dp"
-                            android:layout_height="70dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="8dp"
-                            android:src="@drawable/anim_splash" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_vertical|center_horizontal"
-                            android:layout_marginTop="0dp"
-                            android:fontFamily="@font/outfit_medium"
+                            android:layout_marginRight="150dp"
+                            android:fontFamily="@font/outfit_semibold"
                             android:text="@string/exercise_by_equipments"
-                            android:textColor="@color/text_dark"
+                            android:textColor="@color/gradient_start"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="150dp"
+                            android:fontFamily="@font/outfit_regular"
+                            android:text="Have limited equipments? Browse from a vast range of equipment specific excercises."
+                            android:textColor="@color/gradient_start"
                             android:textSize="15sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -254,13 +278,11 @@
                     android:id="@+id/categoryCard3"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:layout_margin="10dp"
-                    app:cardBackgroundColor="@color/white"
+                    android:layout_margin="15dp"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:cardMaxElevation="12dp"
                     app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/categoryCard2">
@@ -268,29 +290,37 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/card3"
+                        android:padding="15dp"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="262dp"
-                            android:layout_height="70dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="8dp"
-                            android:src="@drawable/anim_splash" />
-
                         <TextView
-                            android:id="@+id/card_heading_body_part"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_vertical|center_horizontal"
-                            android:layout_marginTop="0dp"
-                            android:fontFamily="@font/outfit_medium"
+                            android:layout_marginRight="150dp"
+                            android:fontFamily="@font/outfit_semibold"
                             android:text="@string/exercise_by_target"
-                            android:textColor="@color/text_dark"
+                            android:textColor="@color/gradient_start"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="160dp"
+                            android:fontFamily="@font/outfit_regular"
+                            android:text="Get crushing today! Work on that muscle the right way. Browse from the list of muscles."
+                            android:textColor="@color/gradient_start"
                             android:textSize="15sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/categoryCard3" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

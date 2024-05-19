@@ -1,6 +1,7 @@
 package com.example.fitnessquest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -47,7 +48,9 @@ public class Profile extends AppCompatActivity {
 
         logout.setOnClickListener(v -> {
             mAuth.signOut();
-            finish();
+            Intent intent = new Intent(Profile.this, Login.class);
+            startActivity(intent);
+            //finish();
         });
     }
     void setVariables() {

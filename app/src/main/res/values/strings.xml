@@ -17,9 +17,9 @@
     <string name="calories">Calories</string>
     <string name="bmi">BMI</string>
     <string name="category">Categories</string>
-    <string name="exercise_by_target">Exercise By Target</string>
+    <string name="exercise_by_target">Target a Muscle</string>
     <string name="exercise_by_equipments">Exercise By Equipments</string>
-    <string name="exercise_by_body_parts">Exercise By Body Parts</string>
+    <string name="exercise_by_body_parts">Exercise For Each Body Part</string>
     <string name="exercises">" Exercises"</string>
 
     <string-array name="age_options">

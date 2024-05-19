@@ -13,4 +13,10 @@
     <color name="transparent">#00000000</color>
     <color name="light_background">#DCEAFF</color>
     <color name="light_grey">#F2F2F2</color>
+
+    <color name="rv_color1">#FFE3B9</color>
+    <color name="rv_color2">#FFB9B9</color>
+    <color name="rv_color3">#E4B9FF</color>
+    <color name="rv_color4">#B9EDFF</color>
+
 </resources>

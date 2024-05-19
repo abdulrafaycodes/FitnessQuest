@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,7 +47,8 @@ public class ExcerciseListScreen extends AppCompatActivity {
 
         r_view=findViewById(R.id.by_parts_r_view);
         byPartsRServiceListAdapter=new ExerciseListRvAdapter(ExcerciseListScreen.this,data,slug);
-        r_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
+        r_view.setLayoutManager(mLayoutManager);
         r_view.setAdapter(byPartsRServiceListAdapter);
 
         String type = getIntent().getStringExtra("TYPE");

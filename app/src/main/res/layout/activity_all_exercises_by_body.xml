@@ -7,32 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".AllExercisesByBody">
 
-    <TextView
-        android:id="@+id/heading_body_screen"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="343dp"
-        android:text=""
-        android:fontFamily="@font/outfit_light"
-        android:textColor="@color/text_dark"
-        android:textSize="20sp"
-        android:textAllCaps="true"
-        android:textStyle="bold"
+        android:background="@android:color/transparent"
+        app:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:layout_collapseMode="pin"
+            app:navigationIcon="?attr/homeAsUpIndicator">
+
+            <TextView
+                android:id="@+id/heading_body_screen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit_medium"
+                android:text="Exercise by Body Parts"
+                android:textColor="@color/gradient_start"
+                android:textSize="19sp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/r_view_body_exercises"
-        android:layout_width="409dp"
-        android:layout_height="678dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heading_body_screen" />
+        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

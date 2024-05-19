@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitnessquest.AllExercisesByBody;
 import com.example.fitnessquest.R;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 
@@ -39,6 +40,17 @@ public class ExerciseListRvAdapter extends RecyclerView.Adapter<ExerciseListRvAd
     public void onBindViewHolder(@NonNull ExerciseListRvAdapter.ViewHolder holder, int position) {
         String bodyPart = data.get(position);
         holder.bind(bodyPart);
+
+        holder.start_exercise.setOnClickListener( v -> {
+            if (position != RecyclerView.NO_POSITION) {
+                String selectedBodyPart = data.get(position);
+                Intent intent = new Intent(context, AllExercisesByBody.class);
+                System.out.println("Shoiab"+ selectedBodyPart);
+                intent.putExtra("BODY_PART_NAME", selectedBodyPart);
+                intent.putExtra("SLUG", slug);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -48,9 +60,11 @@ public class ExerciseListRvAdapter extends RecyclerView.Adapter<ExerciseListRvAd
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private TextView parts_name;
+    private MaterialButton start_exercise;
         public ViewHolder(View itemView) {
             super(itemView);
             parts_name=itemView.findViewById(R.id.rv_items);
+            start_exercise=itemView.findViewById(R.id.startExcercise);
             itemView.setOnClickListener(this);
 
         }
