@@ -191,7 +191,7 @@ tools:context=".AddUserDetails">
                     android:id="@+id/inputHeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textWebEmailAddress"
+                    android:inputType="number"
                     android:fontFamily="@font/outfit_light" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -216,7 +216,7 @@ tools:context=".AddUserDetails">
                     android:id="@+id/inputWeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textWebEmailAddress"
+                    android:inputType="number"
                     android:fontFamily="@font/outfit_light" />
 
             </com.google.android.material.textfield.TextInputLayout>

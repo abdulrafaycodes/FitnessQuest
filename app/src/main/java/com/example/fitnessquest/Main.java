@@ -70,7 +70,7 @@ public class Main extends AppCompatActivity {
         setVariables();
 
         caloryCountTextView = findViewById(R.id.caloryCount);
-        bmiTextView = findViewById(R.id.textView4);
+        bmiTextView = findViewById(R.id.bmiCount);
 
         // Fetch and display the current user's calorie count and BMI
         fetchUserData();
@@ -199,7 +199,7 @@ public class Main extends AppCompatActivity {
 
                             Long height = document.getLong("Height");
                             Long weight = document.getLong("Weight");
-                            if (height != null && weight != null && height > 0) {
+                            if (height != null && weight != null && height > 0 && weight > 0) {
                                 double heightInMeters = height / 100.0;
                                 double bmi = weight / (heightInMeters * heightInMeters);
                                 bmiTextView.setText(String.format("%.2f", bmi));

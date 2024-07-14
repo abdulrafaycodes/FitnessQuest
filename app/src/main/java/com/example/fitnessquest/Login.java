@@ -41,7 +41,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
-
     TextView goToSignup, txtHeadingLogin, forgotPassword;
     TextInputLayout txtEmail, txtPassword;
     TextInputEditText edtEmail, edtPassword;

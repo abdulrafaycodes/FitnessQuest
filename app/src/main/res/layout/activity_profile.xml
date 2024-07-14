@@ -58,34 +58,7 @@
         android:weightSum="3"
         app:layout_constraintTop_toBottomOf="@+id/txtUserFullname">
 
-        <!-- Total Time -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/workout" />
-
-            <TextView
-                android:id="@+id/txtTotalTimeWorkout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/outfit_semibold"
-                android:text="2h 30m"
-                android:textColor="@color/gradient_start" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/outfit_regular"
-                android:text="Total time"
-                android:textColor="@color/gradient_start" />
-        </LinearLayout>
 
         <!-- Calories Burned -->
         <LinearLayout

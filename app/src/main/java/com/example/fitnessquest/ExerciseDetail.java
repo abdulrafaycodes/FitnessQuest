@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -46,7 +47,6 @@ public class ExerciseDetail extends AppCompatActivity {
     private long startTimeInMillis;
     private long timeLeftInMillis = 0;
     private long totalTimeInMillis = 0; // Track total time for calculating calories
-
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
 
@@ -198,8 +198,6 @@ public class ExerciseDetail extends AppCompatActivity {
                             System.out.println("NEW ");
                             System.out.println(newCalories);
                             System.out.println(time);
-
-
 
                             Map<String, Object> updates = new HashMap<>();
                             updates.put("CaloriesBurnt", newCalories);

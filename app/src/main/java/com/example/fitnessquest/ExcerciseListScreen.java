@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.fitnessquest.adapters.ExerciseListRvAdapter;
 import com.example.fitnessquest.client.ApiClient;
 import com.example.fitnessquest.client.ApiInterface;
+import com.google.android.material.appbar.MaterialToolbar;
+
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -25,7 +27,7 @@ import retrofit2.Response;
 
 public class ExcerciseListScreen extends AppCompatActivity {
     RecyclerView r_view;
-
+    MaterialToolbar toolbar;
     TextView tv_heading;
     ExerciseListRvAdapter byPartsRServiceListAdapter;
     List<String> data=new ArrayList<>();
@@ -41,6 +43,8 @@ public class ExcerciseListScreen extends AppCompatActivity {
         });
         String slug = getIntent().getStringExtra("SLUG");
 
+        toolbar=findViewById(R.id.topAppBar_by_parts);
+        toolbar.setNavigationOnClickListener(view -> onBackPressed());
         tv_heading=findViewById(R.id.heading);
         String heading = getIntent().getStringExtra("HEADING");
         tv_heading.setText(heading);

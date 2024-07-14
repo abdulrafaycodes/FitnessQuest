@@ -14,7 +14,7 @@
     <string name="email_verification_title">Email Verification Pending</string>
     <string name="email_verification_message">Check your email and verify your account. You will be able to login once you verify your email.</string>
     <string name="ok">OK</string>
-    <string name="calories">Calories</string>
+    <string name="calories">Burnt Calories</string>
     <string name="bmi">BMI</string>
     <string name="category">Categories</string>
     <string name="exercise_by_target">Target a Muscle</string>

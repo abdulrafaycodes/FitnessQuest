@@ -21,7 +21,6 @@ tools:context=".AddUserActiveStatus">
         app:layout_collapseMode="pin"
         app:navigationIcon="?attr/homeAsUpIndicator">
 
-
     </com.google.android.material.appbar.MaterialToolbar>
 </com.google.android.material.appbar.AppBarLayout>
 

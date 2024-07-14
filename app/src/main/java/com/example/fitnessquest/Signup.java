@@ -37,6 +37,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.hbb20.CountryCodePicker;
 
@@ -51,9 +52,7 @@ public class Signup extends AppCompatActivity {
     TextInputLayout txtEmail, txtPassword, txtFullname;
     MaterialButton btnSignup;
     private FirebaseAuth mAuth;
-
     private FirebaseFirestore db;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,23 +115,40 @@ public class Signup extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign up success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
+                            user.getUid();
                             // Send verification email
                             if (user != null) {
-                                user.sendEmailVerification()
+                                // Update user's profile with the full name
+                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                        .setDisplayName(fullname)  // assuming fullName is the variable that holds the user's full name
+                                        .build();
+
+                                user.updateProfile(profileUpdates)
                                         .addOnCompleteListener(task1 -> {
                                             if (task1.isSuccessful()) {
-                                                Log.d("EmailVerification", "Email sent.");
-                                                showDialog(getString(R.string.email_verification_title), getString(R.string.email_verification_message));
-                                                edtEmail.setText("");
-                                                edtPassword.setText("");
-                                                edtFullname.setText("");
-                                                FirebaseAuth.getInstance().signOut();
+                                                Log.d("UserProfile", "User profile updated.");
+
+                                                // Send verification email
+                                                user.sendEmailVerification()
+                                                        .addOnCompleteListener(task2 -> {
+                                                            if (task2.isSuccessful()) {
+                                                                Log.d("EmailVerification", "Email sent.");
+                                                                showDialog(getString(R.string.email_verification_title), getString(R.string.email_verification_message));
+                                                                edtEmail.setText("");
+                                                                edtPassword.setText("");
+                                                                edtFullname.setText("");
+                                                                FirebaseAuth.getInstance().signOut();
+                                                            } else {
+                                                                Log.w("EmailVerification", "sendEmailVerification", task2.getException());
+                                                            }
+                                                        });
+
+                                                // Create user document in Firestore
+                                                createUserDocument(user);
                                             } else {
-                                                Log.w("EmailVerification", "sendEmailVerification", task1.getException());
+                                                Log.w("UserProfile", "updateProfile:failure", task1.getException());
                                             }
                                         });
-                                createUserDocument(user);
-
                             }
                         } else {
                             // If sign up fails, display a message to the user.
@@ -144,6 +160,7 @@ public class Signup extends AppCompatActivity {
                             Log.w("SignUp", "createUserWithEmail:failure", task.getException());
                         }
                     });
+
         });
 
         //Takes user to login screen
